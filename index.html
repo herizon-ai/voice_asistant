@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Multilingual voice assistant powered by Cerebras." />
+  <title>Cerebras Voice AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">POWERED BY CEREBRAS</div>
+        <h1>Voice AI</h1>
+      </div>
+      <div id="apiStatus" class="status-pill checking">Checking...</div>
+    </header>
+
+    <section class="hero">
+      <div id="orb" class="orb">
+        <div class="orb-core"></div>
+        <div class="orb-ring"></div>
+      </div>
+
+      <div id="stateLabel" class="state-label">Ready</div>
+      <p id="stateHint" class="state-hint">
+        Click the microphone and start speaking.
+      </p>
+
+      <button id="micButton" class="mic-button" type="button" aria-label="Start voice input">
+        <span class="mic-icon">🎙</span>
+      </button>
+
+      <div class="controls">
+        <label>
+          Language
+          <select id="languageSelect">
+            <option value="auto">Auto detect</option>
+            <option value="mr">Marathi</option>
+            <option value="hi">Hindi</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+
+        <button id="clearButton" class="secondary-button" type="button">
+          Clear conversation
+        </button>
+      </div>
+    </section>
+
+    <section class="conversation-card">
+      <div class="conversation-header">
+        <div>
+          <span class="section-kicker">CONVERSATION</span>
+          <h2>Live transcript</h2>
+        </div>
+        <span id="latency" class="latency">—</span>
+      </div>
+
+      <div id="messages" class="messages">
+        <div class="empty-state">
+          <div class="empty-icon">◉</div>
+          <p>Your conversation will appear here.</p>
+          <span>Try: “माझ्यासाठी एक दिवसाचा कामाचा प्लॅन तयार कर.”</span>
+        </div>
+      </div>
+
+      <div class="text-input-row">
+        <input
+          id="textInput"
+          type="text"
+          autocomplete="off"
+          placeholder="Or type your message..."
+        />
+        <button id="sendButton" type="button">Send</button>
+      </div>
+    </section>
+
+    <footer>
+      <span>Cerebras Multilingual Voice Assistant</span>
+      <span>English · Hindi · Marathi</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
